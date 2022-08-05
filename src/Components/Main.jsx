@@ -10,8 +10,6 @@ function Main() {
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         libraries: ['places'],
     })
-
-    const [map, setMap] = useState(null);
     const [directionsRespoance, setDirectionsRespoance] = useState(null);
     const [distance, setdistance] = useState(0);
 
@@ -97,7 +95,7 @@ function Main() {
                             mapTypeControl: false,
                             fullscreenControl: false
                         }}
-                        onLoad={(map) => setMap(map)}
+                        
                     >
                         <Marker position={center} />
                         {
