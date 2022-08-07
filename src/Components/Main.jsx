@@ -66,15 +66,23 @@ function Main() {
     // Autocomplete
     let autocomplete;
     function initAutocomplete() {
-        autocomplete = new window.google.maps.places.Autocomplete(originref.current);
+        // autocomplete = new window.google.maps.places.Autocomplete(originref.current);
 
-        autocomplete.setFields(['address_component', 'geometry']);
+        // autocomplete.setFields(['address_component', 'geometry']);
+        // autocomplete.addListener('place_changed', onPlaceChanged);
+        autocomplete = new window.google.maps.places.Autocomplete(
+            document.getElementById('autocomplete'), {
+            type: ['establishment'],
+            componentRestrictions: { 'country': ['AU'] },
+            fields: ['address_component', 'place_id', 'geometry', 'name']
+        }
+        );
         autocomplete.addListener('place_changed', onPlaceChanged);
     }
     function onPlaceChanged() {
         var place = autocomplete.getPlace();
         console.log(place);
-        if (!place.address_component) {
+        if (!place.geometry) {
             document.getElementById('autocomplete').placeholder = 'Enter a location';
         } else {
             document.getElementById('details').innerHTML = place.name;
@@ -130,7 +138,7 @@ function Main() {
                     <div style={{ background: "white", display: 'flex', height: '6.8vh', width: '250px', border: "2px solid rgb(242, 240, 235)" }}>
                         <i class="fa-solid fa-location-dot" style={{ fontSize: '2rem', color: 'red', marginTop: '8px', marginLeft: '8px' }} />
                         <Autocomplete>
-                            <input className='userinpt' id='autocomplete' type="text" ref={destinationref} onChange={initAutocomplete2()} onClick={clearRoute2} />
+                            <input className='userinpt' id='autocomplete2' type="text" ref={destinationref} onChange={initAutocomplete2()} onClick={clearRoute2} />
                         </Autocomplete>
                     </div>
                     <div >
