@@ -4,8 +4,8 @@
 }
 
 .main {
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 .container{
     display: flex;
@@ -21,25 +21,31 @@
 
 .left {
     /* border: 2px solid red; */
-    width: 40vw;
+    width: 45vw;
     display: flex;
     flex-direction: column;
     margin-top: 80px;
+    
 }
 
 .userinpt {
-    width: 12vw;
-    height: 45px;
+    width: 120px;
+    height: 50px;
     background-color: white;
     border: none;
     border-radius: 5px;
-    border: 2px solid rgb(242, 240, 235);
+    margin-left: 28px;
+    border: none;
+}
+.userinpt:focus{
+    border: none;
+    outline:none;
 }
 
 .btn {
     position: relative;
     top: 11px;
-    left: 23vw;
+    left: 20.5vw;
     width: 130px;
     height: 55px;
     background-color: rgb(13, 13, 137);
@@ -62,14 +68,15 @@
 }
 .para2{
     margin-top: 39px;
+    margin-bottom: 39px;
 }
 #resultpara{
     border: 2px solid rgb(242, 240, 235);
     width: 28.4vw;
 }
 .right{
-    /* border: 2px solid red; */
-    width: 40vw;
+    border: 2px solid red;
+    width: 55vw;
     height: 60vh;
     margin-top: 46px;
 }

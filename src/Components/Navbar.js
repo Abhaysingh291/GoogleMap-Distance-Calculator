@@ -3,7 +3,7 @@ const Navbar = () => {
   return (
     <div style={{background:"white",display:"flex",alignContent:"center"}}>
         <img style={{marginLeft:"30px"}}src="https://i.im.ge/2022/08/05/FcIlGG.logo.png" alt="logo"/>
-        <h1 style={{marginTop:"10px"}}>Graviti</h1>
+        <h2 style={{marginTop:"20px",marginLeft:"8px"}}>Graviti</h2>
     </div>
   )
 }
